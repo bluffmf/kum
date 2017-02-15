@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>NgKum</title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="app/components/container/container.css">
+</head>
+<body ng-app="KumApp" layout="column">
+
+    <md-toolbar class="header">
+        <h1>Kum Site In process</h1>
+    </md-toolbar>
+
+    <div class="container" layout="row" flex ng-include="'app/components/container/container.html'"></div>
+
+
+    <md-bottom ng-controller="ContainerCtrl as vm">
+        <md-subheader>
+            Контакты: <span class="name">{{vm.firm.name}}</span>
+        </md-subheader>
+
+        <md-list>
+            <md-item ng-repeat="item in vm.items">
+                <md-button>
+                    <md-icon md-svg-icon="{{item.icon_url}}"></md-icon>
+                    {{item.name}}
+                </md-button>
+            </md-item>
+        </md-list>
+    </md-bottom>
+
+
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.min.js"></script>
+    <script src="node_modules/angular-material/angular-material.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/components/container/container.js"></script>
+
+</body>
+</html>

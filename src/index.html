@@ -6,30 +6,25 @@
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="app/components/container/container.css">
 </head>
-<body ng-app="KumApp" layout="column">
+<body ng-app="KumApp">
 
-    <md-toolbar class="header">
-        <h1>Kum Site In process</h1>
+    <md-toolbar class="header" layout="row" layout-align="center center">
+        <div class="headinfo">
+            <img src="photo/logo.png" alt="Bookmark">
+        </div>
+        <h3>Site in progress</h3>
+        <div class="headinfo">
+            <div>(095)-55-555-55</div>
+            <div>Украина, г.Пятихатки</div>
+        </div>
     </md-toolbar>
 
-    <div class="container" layout="row" flex ng-include="'app/components/container/container.html'"></div>
+    <div class="main">
+        <div ng-include="'app/components/container/container.html'"></div>
 
-    <h2>git</h2>
+        <div ng-include="'app/components/footer/footer.html'"></div>
+    </div>
 
-    <md-bottom ng-controller="ContainerCtrl as vm">
-        <md-subheader>
-            Контакты: <span class="name">{{vm.firm.name}}</span>
-        </md-subheader>
-
-        <md-list>
-            <md-item ng-repeat="item in vm.items">
-                <md-button>
-                    <md-icon md-svg-icon="{{item.icon_url}}"></md-icon>
-                    {{item.name}}
-                </md-button>
-            </md-item>
-        </md-list>
-    </md-bottom>
 
 
     <script src="node_modules/angular/angular.min.js"></script>
@@ -39,6 +34,7 @@
 
     <script src="app/app.js"></script>
     <script src="app/components/container/container.js"></script>
+    <script src="app/components/footer/footer.js"></script>
 
 </body>
 </html>

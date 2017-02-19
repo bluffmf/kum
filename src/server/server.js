@@ -5,13 +5,14 @@ var express = require('express');
 
 
 var basePath = path.resolve();
-console.log(basePath);
+// console.log(basePath);
 var place = "/dist"; // "/src"
 
 var app = express();
 
 
 app.use('/node_modules', express.static(path.join(basePath, '/node_modules')));
+app.use('/photo', express.static(path.join(basePath, place, '/app/assets')));
 app.use('/scripts', express.static(path.join(basePath, place, '/scripts')));
 app.use('/app', express.static(path.join(basePath, place, '/app')));
 
@@ -23,5 +24,5 @@ app.get('/', function(req, res) {
 
 
 app.listen(process.env.PORT || 5000, function() {
-    console.log('Express server listening on port 3000');
+    console.log('Express server listening on port ' + (process.env.PORT || 5000));
 });

@@ -1,6 +1,6 @@
 
-var KumApp = angular.module('KumApp', ['ngMaterial'])
-    .run(function() {
-        console.log('KumApp is ready!');
-    });
+var KumApp = angular.module('KumApp', ['ngMaterial']);
+    // .config(function($mdIconProvider) {
+    //     $mdIconProvider.defaultIconSet('./svg/avatars.svg', 128);
+    // });
 

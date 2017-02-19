@@ -10,7 +10,6 @@ var place = "/dist"; // "/src"
 
 var app = express();
 
-// app.use(require('connect-livereload')());
 
 app.use('/node_modules', express.static(path.join(basePath, '/node_modules')));
 app.use('/scripts', express.static(path.join(basePath, place, '/scripts')));

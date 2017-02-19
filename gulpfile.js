@@ -39,11 +39,12 @@ gulp.task('copy-js', function() {
 
 
 gulp.task('server', function() {
+
     server.run(['./src/server/server.js']);
 
-    gulp.watch(['src/**/*.html'], [server.run]);
-    gulp.watch(['src/**/*.js'], [server.run]);
-    gulp.watch(['src/**/*.css'], [server.run]);
+    // gulp.watch(['src/**/*.html'], [server.run]);
+    // gulp.watch(['src/**/*.js'], [server.run]);
+    // gulp.watch(['src/**/*.css'], [server.run]);
 });
 
 

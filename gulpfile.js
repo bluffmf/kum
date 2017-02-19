@@ -56,8 +56,7 @@ gulp.task('server', function() {
 
 
 
-
-
+// package.json scripts start     gulp && nodemon start.js
 
 // gulp.task('start', function() {
 //    console.log('Hi, Express server listening on port 3333');

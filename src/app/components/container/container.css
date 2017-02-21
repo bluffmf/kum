@@ -30,6 +30,13 @@ md-toolbar .headinfo {
     margin: 0px 50px;
 }
 
+md-toolbar .headinfo img {
+    position: fixed;
+    top: 0;
+    height: 90px;
+    padding-top: 5px;
+}
+
 .main {
     margin-top: 70px;
     min-width: 700px;

@@ -31,10 +31,10 @@ md-toolbar .headinfo {
 }
 
 md-toolbar .headinfo img {
-    position: fixed;
-    top: 0;
-    height: 90px;
-    padding-top: 5px;
+    /*position: fixed;*/
+    /*top: 0;*/
+    height: 50px;
+    /*padding-top: 5px;*/
 }
 
 .main {

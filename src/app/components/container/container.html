@@ -4,45 +4,72 @@
 
     <div class="padded" md-whiteframe="17" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
 
-        <section>
-            <md-subheader class="md-primary">Unread Messages</md-subheader>
-            <md-list layout-padding="">
-                <md-list-item class="md-4-line" ng-repeat="message in vm.messages">
-                    <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                    <div class="md-list-item-text">
-                        <h3>{{message.what}}</h3>
-                        <h4>{{message.who}}</h4>
-                        <p>
-                            {{message.notes}}
-                        </p>
-                    </div>
-                </md-list-item>
-            </md-list>
+        <section layout="column" layout-align="center center">
+            <md-subheader class="md-primary">Интернет в частном секторе Пятихаток</md-subheader>
+            <md-content>
+                Компания «ООО» также подключает высокоскоростной интернет в частном секторе Пятихаток. Мы используем 10 гигабитные оптоволоконные магистрали и гарантируем каждому клиенту скорость до 100 Мбит/с. Зона покрытия охватывает более 7 тысяч частных домов. Мы предлагаем низкую стоимость подключения услуги и гибкие тарифные планы. Поддержка клиентов осуществляется круглосуточно.
+            </md-content>
+        </section>
+
+    </div>
+
+
+    <div class="padded" md-whiteframe="17" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+
+        <section layout="row" layout-align="center stretch">
+            <img src="photo/png/bonus.png" alt="Bookmark">
+            <div layout="column">
+                <md-subheader class="md-primary">Компания «OOO» проводит акцию «Бонус за подключение».</md-subheader>
+                <md-content>
+                    По условиям акции новые абоненты, подключившиеся к сети компании в частном секторе, получают 300 грн. на бонусный счет. Средства на бонусном счёте могут быть использованы для оплаты основных и дополнительных услуг компании*:
+                </md-content>
+            </div>
         </section>
 
     </div>
 
 
 
-
-
-
     <div class="padded" md-whiteframe="17" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
 
-        <section>
-            <md-subheader class="md-warn">Late Messages</md-subheader>
-            <md-list layout="column" layout-padding="">
-                <md-list-item class="md-4-line" ng-repeat="message in vm.messages">
-                    <img ng-src="{{message.face}}" class="md-avatar" alt="{{message.who}}">
-                    <div class="md-list-item-text">
-                        <h3>{{message.what}}</h3>
-                        <h4>{{message.who}}</h4>
-                        <p>
-                            {{message.notes}}
-                        </p>
-                    </div>
-                </md-list-item>
-            </md-list>
+        <section layout="column" layout-align="center center">
+            <md-subheader class="md-primary">Тарифные планы для физических лиц при подключении в многоквартирных домах.</md-subheader>
+
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Скорость доступа к Украинскому сегменту Интернет</th>
+                    <th>Скорость доступа к зарубежному сегменту Интернет</th>
+                    <th>Скорость доступа к зарубежному сегменту Интернет в Ночное время (с 1:00 до 8:00)</th>
+                    <th>Ежемесячная абонентская плата (с НДС)</th>
+                    <th>Стоимость подключения (с НДС)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>до 100 Мбит/с</td>
+                    <td>до 50 Мбит/с</td>
+                    <td>до 100 Мбит/с</td>
+                    <td>60 грн.</td>
+                    <td>1 грн.</td>
+                </tr>
+                <tr>
+                    <td>до 100 Мбит/с</td>
+                    <td>до 70 Мбит/с</td>
+                    <td>до 100 Мбит/с</td>
+                    <td>70 грн.</td>
+                    <td>1 грн.</td>
+                </tr>
+                <tr>
+                    <td>до 100 Мбит/с</td>
+                    <td>до 100 Мбит/с</td>
+                    <td>до 100 Мбит/с</td>
+                    <td>80 грн.</td>
+                    <td>1 грн.</td>
+                </tr>
+                </tbody>
+            </table>
         </section>
 
     </div>

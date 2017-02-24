@@ -1,42 +1,3 @@
-html, body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    /*height: 100%;*/
-    margin: 0px;
-    padding: 0px;
-    background: #fff;
-    min-width: 700px;
-}
-
-md-toolbar.header {
-    opacity: 0.7;
-    position: fixed;
-    z-index: 21;
-    top: 0;
-    height: 50px;
-}
-
-md-toolbar h3 {
-    margin: auto;
-    font-weight: 500;
-    max-width: 1100px;
-    margin: 0 auto;
-    position: relative;
-}
-
-md-toolbar .headinfo {
-    width: 150px;
-    font-size: 12px;
-    margin: 0px 50px;
-}
-
-md-toolbar .headinfo img {
-    /*position: fixed;*/
-    /*top: 0;*/
-    height: 50px;
-    /*padding-top: 5px;*/
-}
-
 .main {
     margin-top: 70px;
     min-width: 700px;
@@ -48,6 +9,7 @@ md-toolbar .headinfo img {
     margin: 0 30px 30px 30px;
 }
 .padded section md-content {
+    background-color: #fff;
     margin: 0 30px 30px 16px;
 }
 
@@ -55,8 +17,6 @@ md-toolbar .headinfo img {
 .padded section img {
     margin: 30px;
 }
-
-
 
 
 
@@ -79,20 +39,6 @@ md-toolbar .headinfo img {
 
 
 
-.footer {
-    background-color: #eceff1;
-    position: relative;
-    z-index: 900;
-    padding: 25px 75px;
-}
-
-
-
-
-
-
-
-
 
 
 .whiteframe {
@@ -102,7 +48,7 @@ md-toolbar .headinfo img {
     /* For breakpoint `-gt-md` */
 }
 .whiteframe md-whiteframe, .whiteframe div.padded {
-    background: #fff;
+    /*background: #fff;*/
     margin: 25px 50px;
     /*height: 100px;*/
 }

@@ -1,0 +1,34 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+    background: #fff;
+    min-width: 700px;
+}
+
+md-toolbar.header {
+    opacity: 0.7;
+    position: fixed;
+    z-index: 21;
+    top: 0;
+    height: 50px;
+}
+
+md-toolbar h3 {
+    margin: auto;
+    font-weight: 500;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+md-toolbar .headinfo {
+    width: 150px;
+    font-size: 12px;
+    margin: 0px 50px;
+}
+
+md-toolbar .headinfo img {
+    height: 50px;
+}

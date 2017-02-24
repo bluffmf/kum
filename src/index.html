@@ -5,7 +5,9 @@
 	<meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="app/components/header/header.css">
     <link rel="stylesheet" href="app/components/container/container.css">
+    <link rel="stylesheet" href="app/components/footer/footer.css">
     <style>
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
             display: none !important;
@@ -14,16 +16,7 @@
 </head>
 <body ng-app="KumApp">
 
-    <md-toolbar class="header" layout="row" layout-align="center center">
-        <div class="headinfo">
-            <img src="photo/png/bar.png" alt="Bookmark">
-        </div>
-        <h3>Site in progress</h3>
-        <div class="headinfo">
-            <div>(095)-55-555-55</div>
-            <div>Украина, г.Пятихатки</div>
-        </div>
-    </md-toolbar>
+    <div ng-include="'app/components/header/header.html'"></div>
 
     <div class="main">
         <div ng-include="'app/components/container/container.html'"></div>

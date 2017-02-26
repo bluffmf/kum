@@ -3,8 +3,8 @@
     z-index: 900;
     padding: 25px 75px;
     margin-top: 50px;
-    position: relative;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
 }

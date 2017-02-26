@@ -5,6 +5,7 @@ html, body {
     padding: 0px;
     background: #fff;
     min-width: 700px;
+    height: 100%;
 }
 
 md-toolbar.header {

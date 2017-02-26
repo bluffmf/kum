@@ -18,10 +18,10 @@
 
     <div ng-include="'app/components/header/header.html'"></div>
 
-    <div class="main">
-        <div ng-include="'app/components/container/container.html'"></div>
+    <div class="main" layout="column" layout-align="start stretch">
+        <div flex ng-include="'app/components/container/container.html'"></div>
 
-        <div ng-include="'app/components/footer/footer.html'"></div>
+        <div flex ng-include="'app/components/footer/footer.html'"></div>
     </div>
 
 

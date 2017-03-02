@@ -22,6 +22,9 @@ app.get('/', function(req, res) {
     readable.pipe(res);
 });
 
+var footerRouter = require('./db/footer/footerRouter')
+app.use('/:footer', footerRouter)
+
 
 app.listen(process.env.PORT || 5000, function() {
     console.log('Express server listening on port ' + (process.env.PORT || 5000));

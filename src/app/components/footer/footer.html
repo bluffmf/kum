@@ -1,15 +1,17 @@
 <footer ng-controller="FooterCtrl as vm" class="footer" layout="row" layout-align="space-between center">
     <div>
-        <p>Privacy Policy</p>
-        <p>© 2017 NgKu</p>
+        <p>{{vm.policy}}</p>
+        <p>{{vm.copyright}}</p>
     </div>
 
     <md-list>
         <md-item ng-repeat="item in vm.items">
-            <md-button ng-click="vm.toContact()">
+            <md-button ng-click="vm.toContact(item)">
                 <md-icon md-svg-icon="{{item.icon_url}}"></md-icon>
                 {{item.name}}
             </md-button>
         </md-item>
     </md-list>
+
+    <button ng-click="vm.go()">Get data</button>
 </footer>

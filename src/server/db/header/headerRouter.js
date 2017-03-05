@@ -12,13 +12,13 @@ var router = express.Router({
 
 
 router.all('/', function(req, res, next) {
-    console.log(req.method, 'for', req.params.footer);
+    // console.log(req.method, 'for', req.params.header);
     next();
 });
 
 
 router.get('/', function(req, res) {
-    var readable = fs.createReadStream(path.join(basePath, '/src/server/db/footer/', '/footer.json'));
+    var readable = fs.createReadStream(path.join(basePath, '/src/server/db/header/', '/header.json'));
     readable.pipe(res);
 });
 

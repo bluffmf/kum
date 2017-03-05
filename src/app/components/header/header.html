@@ -1,10 +1,12 @@
-<md-toolbar class="header" layout="row" layout-align="center center">
+<md-toolbar ng-controller="HeaderCtrl as vm" class="header" layout="row" layout-align="center center">
     <div class="headinfo">
-        <img src="photo/png/bar.png" alt="Bookmark">
+        <md-button ng-click="vm.toAdmin()" aria-label="logo">
+            <img src="{{vm.head.logo}}" alt="logo">
+        </md-button>
     </div>
-    <h3>Site in progress</h3>
+    <h3>{{vm.head.title}}</h3>
     <div class="headinfo">
-        <div>(095)-55-555-55</div>
-        <div>Украина, г.Пятихатки</div>
+        <div>{{vm.head.phone}}</div>
+        <div>{{vm.head.address}}</div>
     </div>
 </md-toolbar>

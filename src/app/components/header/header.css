@@ -33,3 +33,21 @@ md-toolbar .headinfo {
 md-toolbar .headinfo img {
     height: 50px;
 }
+
+.admin-sidenav {
+    position: fixed;
+    min-width: 160px;
+    max-width: 100%;
+    width: 20%;
+    height: 30%;
+    margin: 15% 0 0 40%;
+
+    padding: 10px;
+}
+md-backdrop.md-opaque {
+    position: fixed;
+}
+
+.admin-sidenav label input {
+    width: 200px;
+}

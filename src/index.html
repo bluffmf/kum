@@ -25,6 +25,30 @@
     </div>
 
 
+    <md-sidenav md-component-id="left" class="admin-sidenav">
+        <div layout="column" layout-align="center center">
+            <form name="ku">
+                <div>
+                    <label>Введите логин:
+                        <input type="text" name="login" />
+                    </label>
+                    <br />
+                    <div ng-show="ku.$submitted || ku.login.$touched">
+                        <div>Введите логин</div>
+                    </div>
+                    <label>Введите пароль:
+                        <input type="text" name="pass" />
+                    </label>
+                </div>
+                <input type="button" value="Сброс" />
+                <input type="submit" value="Ввести" />
+            </form>
+        </div>
+    </md-sidenav>
+
+
+
+
 
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="node_modules/angular-animate/angular-animate.js"></script>
@@ -32,6 +56,8 @@
     <script src="node_modules/angular-material/angular-material.min.js"></script>
 
     <script src="app/app.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/components/header/header.js"></script>
     <script src="app/components/container/container.js"></script>
     <script src="app/components/footer/footer.js"></script>
 

@@ -1,0 +1,25 @@
+<md-sidenav md-component-id="left" class="admin-sidenav">
+    <div ng-controller="AdminCtrl as vm">
+        <form name="vm.ku" novalidate class="css-form">
+            <div layout="column" layout-align="end end">
+                <label>Введите логин:
+                    <input type="text" name="login" ng-model="vm.adm.login" required />
+                </label>
+                <div ng-show="vm.ku.$submitted || vm.ku.login.$touched">
+                    <div ng-show="vm.ku.login.$error.required">Введите логин</div>
+                </div>
+
+                <label>Введите пароль:
+                    <input type="text" name="pass" />
+                </label>
+                <div ng-show="vm.ku.$submitted || vm.ku.pass.$touched">
+                    <div>Введите пароль</div>
+                </div>
+            </div>
+            <div layout="row" layout-align="center center">
+                <md-button class="md-raised" ng-click="vm.reset()">Сброс</md-button>
+                <md-button class="md-raised md-primary" type="submit" ng-click="vm.go()">Ввести</md-button>
+            </div>
+        </form>
+    </div>
+</md-sidenav>

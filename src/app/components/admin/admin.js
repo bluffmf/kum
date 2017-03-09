@@ -1,18 +1,26 @@
 KumApp.controller('AdminCtrl', function ($scope, $window, $http) {
     var vm = this;
 
-    vm.reset = function() {
-        vm.ku.$setPristine();
+    // ng-model="vm.adm.login"
+    // ng-model="vm.adm.pass"
+
+
+    vm.reset = function(form) {
+        vm.adm = {};
         vm.adm.login = "";
+        vm.adm.pass = "";
+        form.$setPristine();
+        form.$setUntouched();
     };
 
 
-    vm.go = function() {
+    vm.go = function(form) {
 
-        if (vm.ku.$valid) {
-            console.log("go server");
+        if (form.$invalid) {
+            console.log("invalid");
         } else {
-            console.log("no");
+            console.log("send request");
+            console.log(vm.adm);
         }
 
 

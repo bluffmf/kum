@@ -15,7 +15,7 @@ registerServices.service('footerService', function($http, $templateCache, $q) {
                     deferred.resolve(res);
                 },
                 function(res) {
-                    deferred.resolve(res.status);
+                    deferred.reject(res.status);
                 }
             );
             return deferred.promise;
@@ -36,7 +36,29 @@ registerServices.service('headerService', function($http, $templateCache, $q) {
                     deferred.resolve(res);
                 },
                 function(res) {
-                    deferred.resolve(res.status);
+                    deferred.reject(res.status);
+                }
+            );
+            return deferred.promise;
+        }
+    }
+});
+
+registerServices.service('adminService', function($http, $templateCache, $q) {
+    return {
+        signIn: function(adm) {
+            var deferred = $q.defer();
+            $http({
+                method: "POST",
+                url: "/admin",
+                data: adm,
+                dataType: "json"
+            }).then(
+                function(res) {
+                    deferred.resolve(res);
+                },
+                function(res) {
+                    deferred.reject(res.status);
                 }
             );
             return deferred.promise;

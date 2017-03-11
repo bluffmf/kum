@@ -31,22 +31,3 @@ KumApp.controller('FooterCtrl', function ($scope, $window, $http, footerService)
 });
 
 
-
-
-
-
-// vm.go = function() {
-//     $http({
-//         method: 'GET',
-//         url: '/footer',
-//         dataType: 'json'
-//     }).then(
-//         function(data) {
-//             console.log(data);
-//         },
-//         function(data) {
-//             console.log(data.status)
-//         }
-//     )
-// };
-// <button ng-click="vm.go()">Get data</button>

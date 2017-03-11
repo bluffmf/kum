@@ -1,14 +1,11 @@
-KumApp.controller('AdminCtrl', function ($scope, $window, $http) {
+KumApp.controller('AdminCtrl', function ($scope, $window, $http, adminService) {
     var vm = this;
-
-    // ng-model="vm.adm.login"
-    // ng-model="vm.adm.pass"
 
 
     vm.reset = function(form) {
         vm.adm = {};
-        vm.adm.login = "";
-        vm.adm.pass = "";
+        vm.adm.login = '';
+        vm.adm.password = '';
         form.$setPristine();
         form.$setUntouched();
     };
@@ -18,25 +15,17 @@ KumApp.controller('AdminCtrl', function ($scope, $window, $http) {
 
         if (form.$invalid) {
             console.log("invalid");
-        } else {
-            console.log("send request");
-            console.log(vm.adm);
+            return false;
         }
 
+        adminService.signIn(vm.adm).then(function(res) {
+            console.log(res.data);
+        }).catch(function(err) {
+            console.log(err);
+        });
 
 
-        // $http({
-        //     method: 'GET',
-        //     url: '/footer',
-        //     dataType: 'json'
-        // }).then(
-        //     function(data) {
-        //         console.log(data);
-        //     },
-        //     function(data) {
-        //         console.log(data.status)
-        //     }
-        // )
+
     };
 
 });

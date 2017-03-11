@@ -28,23 +28,23 @@ gulp.task('copy-index-html', function() {
 });
 
 gulp.task('copy-css', function() {
-    return gulp.src('./src/**/*.css')
-        .pipe(gulp.dest('./dist'));
+    return gulp.src('./src/app/**/*.css')
+        .pipe(gulp.dest('./dist/app'));
 });
 
 gulp.task('copy-svg', function() {
-    return gulp.src('./src/**/*.svg')
-        .pipe(gulp.dest('./dist'));
+    return gulp.src('./src/app/**/*.svg')
+        .pipe(gulp.dest('./dist/app'));
 });
 
 gulp.task('copy-png', function() {
-    return gulp.src('./src/**/*.png')
-        .pipe(gulp.dest('./dist'));
+    return gulp.src('./src/app/**/*.png')
+        .pipe(gulp.dest('./dist/app'));
 });
 
 gulp.task('copy-js', function() {
-    return gulp.src('./src/**/*.js')
-        .pipe(gulp.dest('./dist'));
+    return gulp.src('./src/app/**/*.js')
+        .pipe(gulp.dest('./dist/app'));
 });
 
 

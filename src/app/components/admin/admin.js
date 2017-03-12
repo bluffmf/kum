@@ -1,4 +1,4 @@
-KumApp.controller('AdminCtrl', function ($scope, $window, $http, adminService) {
+KumApp.controller('AdminCtrl', function ($scope, $window, $http, $location, adminService) {
     var vm = this;
 
 
@@ -20,8 +20,11 @@ KumApp.controller('AdminCtrl', function ($scope, $window, $http, adminService) {
 
         adminService.signIn(vm.adm).then(function(res) {
             console.log(res.data);
+            window.location.replace($location.absUrl() + res.data);
+
         }).catch(function(err) {
-            console.log(err);
+            alert(err.data);
+            console.log('Error ', err.status, err.data);
         });
 
 

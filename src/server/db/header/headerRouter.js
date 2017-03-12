@@ -17,7 +17,7 @@ router.all('/', function(req, res, next) {
 });
 
 
-router.get('/', function(req, res) {
+router.post('/', function(req, res) {
     var readable = fs.createReadStream(path.join(basePath, '/src/server/db/header/', '/header.json'));
     readable.pipe(res);
 });

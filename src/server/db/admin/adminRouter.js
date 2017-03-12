@@ -4,26 +4,54 @@ var path = require('path');
 
 
 
+var place = require('../../server')
+
 var basePath = path.resolve();
 var router = express.Router({
     mergeParams: true
 });
 
 
+function authorize(req, res, next) {
+    if(req.session.user) {
+        next();
+    } else {
+        console.log('Not a user');
+        // res.status(500).send('Not a user');
+        res.redirect('/')
+    }
+}
 
 router.all('/', function(req, res, next) {
-    console.log(req.method, 'for', req.params.adm);
+    console.log(req.method, 'for Admin: ');
+
     next();
 });
 
 
-router.post('/', function(req, res) {
 
-    res.send("login");
-    // var readable = fs.createReadStream(path.join(basePath, '/src/server/db/footer/', '/footer.json'));
-    // readable.pipe(res);
+router.get('/', authorize, function(req, res) {
+    var readable = fs.createReadStream(path.join(basePath, place, '/adminku/adminku.html'));
+    readable.pipe(res);
+})
+
+
+router.post('/', function(req, res, next) {
+
+    var flag = (req.body.login === 'w' && req.body.password === 'w') ? true : false;
+
+    if (flag) {
+        req.session.user = {id: req.body.login, name: req.body.password}
+        console.log('First Good')
+        res.send('admin')
+    } else {
+        delete req.session.user
+        console.log('Access Denied!')
+        res.status(500).send('Access Denied!');
+    }
 });
 
 
 
 module.exports = router;
+

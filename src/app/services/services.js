@@ -7,15 +7,15 @@ registerServices.service('footerService', function($http, $templateCache, $q) {
         getFooterData: function() {
             var deferred = $q.defer();
             $http({
-                method: "GET",
+                method: "POST",
                 url: "/footer",
                 dataType: "json"
             }).then(
                 function(res) {
                     deferred.resolve(res);
                 },
-                function(res) {
-                    deferred.reject(res.status);
+                function(err) {
+                    deferred.reject(err);
                 }
             );
             return deferred.promise;
@@ -28,15 +28,15 @@ registerServices.service('headerService', function($http, $templateCache, $q) {
         getHeaderData: function() {
             var deferred = $q.defer();
             $http({
-                method: "GET",
+                method: "POST",
                 url: "/header",
                 dataType: "json"
             }).then(
                 function(res) {
                     deferred.resolve(res);
                 },
-                function(res) {
-                    deferred.reject(res.status);
+                function(err) {
+                    deferred.reject(err);
                 }
             );
             return deferred.promise;
@@ -57,8 +57,8 @@ registerServices.service('adminService', function($http, $templateCache, $q) {
                 function(res) {
                     deferred.resolve(res);
                 },
-                function(res) {
-                    deferred.reject(res.status);
+                function(err) {
+                    deferred.reject(err);
                 }
             );
             return deferred.promise;

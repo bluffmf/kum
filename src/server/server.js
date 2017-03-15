@@ -8,8 +8,8 @@ var cookieParser = require('cookie-parser')
 
 
 var basePath = path.resolve();
-var place = "/dist/main";
-module.exports = place;
+var placeMain = "/dist/main";
+var placeAdmin = "/dist/adminku";
 
 var app = express();
 
@@ -26,11 +26,10 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 
-//app.use('/scripts', express.static(path.join(basePath, place, '/scripts')));
 app.use('/node_modules', express.static(path.join(basePath, '/node_modules')));
-app.use('/photo', express.static(path.join(basePath, place, '/app/assets')));
-app.use('/app', express.static(path.join(basePath, place, '/app')));
-
+app.use('/photo', express.static(path.join(basePath, placeMain, '/app/assets')));
+app.use('/app_main', express.static(path.join(basePath, placeMain, '/app')));
+app.use('/app_admin', express.static(path.join(basePath, placeAdmin, '/app')));
 
 
 app.get('/', function(req, res) {
@@ -40,7 +39,7 @@ app.get('/', function(req, res) {
     // }
     // req.session.ad++
     // console.log(req.session.ad)
-    var readable = fs.createReadStream(path.join(basePath, place, '/index.html'));
+    var readable = fs.createReadStream(path.join(basePath, placeMain, '/index.html'));
     readable.pipe(res);
 });
 
@@ -57,7 +56,7 @@ app.use('/admin', adminRouter)
 
 app.use(function(req, res, next) {
     res.status(404)
-    var readable = fs.createReadStream(path.join(basePath, place, '/app/assets/png/404.png'));
+    var readable = fs.createReadStream(path.join(basePath, placeMain, '/app/assets/png/404.png'));
     readable.pipe(res);
 });
 

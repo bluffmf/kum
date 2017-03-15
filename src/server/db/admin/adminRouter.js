@@ -4,7 +4,7 @@ var path = require('path');
 
 
 
-var place = require('../../server')
+var place = "/dist/adminku";
 
 var basePath = path.resolve();
 var router = express.Router({
@@ -31,7 +31,7 @@ router.all('/', function(req, res, next) {
 
 
 router.get('/', authorize, function(req, res) {
-    var readable = fs.createReadStream(path.join(basePath, place, '/adminku/adminku.html'));
+    var readable = fs.createReadStream(path.join(basePath, place, '/adminku.html'));
     readable.pipe(res);
 })
 

@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser')
 
 
 var basePath = path.resolve();
-var place = "/dist"; // "/src" console.log(basePath);
+var place = "/dist/main";
 module.exports = place;
 
 var app = express();

@@ -28,23 +28,23 @@ gulp.task('copy-index-html', function() {
 });
 
 gulp.task('copy-css', function() {
-    return gulp.src('./src/app/**/*.css')
-        .pipe(gulp.dest('./dist/app'));
+    return gulp.src('./src/**/*.css')
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('copy-svg', function() {
-    return gulp.src('./src/app/**/*.svg')
-        .pipe(gulp.dest('./dist/app'));
+    return gulp.src('./src/**/*.svg')
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('copy-png', function() {
-    return gulp.src('./src/app/**/*.png')
-        .pipe(gulp.dest('./dist/app'));
+    return gulp.src('./src/**/*.png')
+        .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('copy-js', function() {
-    return gulp.src('./src/app/**/*.js')
-        .pipe(gulp.dest('./dist/app'));
+    return gulp.src('./src/main/**/*.js')
+        .pipe(gulp.dest('./dist/main'));
 });
 
 
@@ -65,11 +65,3 @@ gulp.task('server', function() {
 
 
 
-
-
-// package.json scripts start     gulp && nodemon start.js
-
-// gulp.task('start', function() {
-//    console.log('Hi, Express server listening on port 3333');
-//    return run('node start.js').exec();
-// });

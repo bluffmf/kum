@@ -3,6 +3,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var run = require('gulp-run');
 var server = require('gulp-express');
+var merge = require('merge-stream');
 
 
 
@@ -42,9 +43,14 @@ gulp.task('copy-png', function() {
         .pipe(gulp.dest('./dist'));
 });
 
+
 gulp.task('copy-js', function() {
-    return gulp.src('./src/main/**/*.js')
-        .pipe(gulp.dest('./dist/main'));
+    var folders = ['main', 'adminku'];
+
+    folders.map(function(element) {
+        return gulp.src('./src/' + element + '/**/*.js')
+            .pipe(gulp.dest('./dist/' + element));
+    });
 });
 
 

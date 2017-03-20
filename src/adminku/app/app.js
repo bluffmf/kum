@@ -1,2 +1,2 @@
 
-var AdminKuApp = angular.module('AdminKuApp', ['ngMaterial', 'adminServices'])
+var AdminKuApp = angular.module('AdminKuApp', ['ngMaterial', 'ui-notification', 'adminServices'])

@@ -5,19 +5,66 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css">
-    <link rel="stylesheet" href="app_admin/components/admin/admin.css">
-
+    <link rel="stylesheet" href="node_modules/angular-ui-notification/dist/angular-ui-notification.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="app_admin/components/header/header.css">
     <style>
         [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
             display: none !important;
         }
     </style>
 </head>
-<body ng-app="AdminKuApp">
+<body ng-app="AdminKuApp" layout="column">
 
-    <div ng-controller="AdminCtrl as vm">
-        <h2>ADMIN KU App</h2>
-        <h1>Home {{vm.home}}</h1>
+    <md-toolbar layout="row" class="title">
+        <div flex="20" layout="row" layout-align="center center">
+            <h4><a href="/"><i class="fa fa-home fa-2x"></i>На главную</a></h4>
+        </div>
+        <div flex="60" layout="row" layout-align="center center">
+            <h3>Admin</h3>
+        </div>
+    </md-toolbar>
+
+    <div flex ng-controller="AdminHeaderCtrl as vm" class="header">
+
+        <div layout="row" layout-align="center center">
+            <md-whiteframe flex="50" class="md-whiteframe-11dp">
+                <form name="headerForm" novalidate class="header-form" ng-submit="vm.save(headerForm)">
+                    <h3>Header</h3>
+                    <div flex="80" layout="column" layout-align="center end">
+                        <label>Тайтл:
+                            <input type="text" name="tit" ng-model="vm.head.title" required />
+                        </label>
+                        <div ng-show="headerForm.tit.$dirty && headerForm.tit.$error.required" class="md-caption red">Введите тайтл</div>
+
+                        <label>Телефон:
+                            <input type="text" name="pho" ng-model="vm.head.phone" required />
+                        </label>
+                        <div ng-show="headerForm.pho.$dirty && headerForm.pho.$error.required" class="md-caption red">Введите телефон</div>
+
+                        <label>Адрес:
+                            <input type="text" name="adr" ng-model="vm.head.address" required />
+                        </label>
+                        <div ng-show="headerForm.adr.$dirty && headerForm.adr.$error.required" class="md-caption red">Введите адрес</div>
+                    </div>
+                    <div layout="row" layout-align="end center" ng-init="vm.reset(headerForm)">
+                        <md-button class="md-raised" ng-click="vm.reset(headerForm)">Сброс</md-button>
+                        <md-button class="md-raised md-primary" type="submit" ng-disabled="headerForm.$invalid">Сохранить</md-button>
+                    </div>
+                </form>
+            </md-whiteframe>
+        </div>
+
+
+
+    </div>
+
+    <div class="content">
+        <h2>Content</h2>
+    </div>
+
+    <div class="footer">
+        <h2>Footer</h2>
     </div>
 
 
@@ -29,11 +76,11 @@
 <script src="node_modules/angular-animate/angular-animate.js"></script>
 <script src="node_modules/angular-aria/angular-aria.min.js"></script>
 <script src="node_modules/angular-material/angular-material.min.js"></script>
+<script src="node_modules/angular-ui-notification/dist/angular-ui-notification.js"></script>
 
 <script src="app_admin/app.js"></script>
 <script src="app_admin/services/services.js"></script>
-<script src="app_admin/components/admin/admin.js"></script>
-
+<script src="app_admin/components/header/header.js"></script>
 
 </body>
 </html>

@@ -47,7 +47,7 @@ gulp.task('copy-png', function() {
 gulp.task('copy-js', function() {
     var folders = ['main', 'adminku'];
 
-    folders.map(function(element) {
+    folders.forEach(function(element) {
         return gulp.src('./src/' + element + '/**/*.js')
             .pipe(gulp.dest('./dist/' + element));
     });

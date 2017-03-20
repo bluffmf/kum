@@ -2,21 +2,30 @@
 var adminServices = angular.module('adminServices', []);
 
 
-adminServices.service('adminFooterService', function($http, $templateCache, $q) {
+adminServices.service('adminHeaderService', function($http, $templateCache, $q) {
     return {
-        changeFooter: function() {
+        getHeaderData: function() {
             var deferred = $q.defer();
             $http({
                 method: "POST",
-                url: "/adminfooter",
+                url: "/header",
                 dataType: "json"
             }).then(
-                function(res) {
-                    deferred.resolve(res);
-                },
-                function(err) {
-                    deferred.reject(err);
-                }
+                res => deferred.resolve(res),
+                err => deferred.reject(err)
+            );
+            return deferred.promise;
+        },
+        saveHeaderData: function(head) {
+            var deferred = $q.defer();
+            $http({
+                method: "PUT",
+                url: "/header",
+                dataType: "json",
+                data: head
+            }).then(
+                res => deferred.resolve(res),
+                err => deferred.reject(err)
             );
             return deferred.promise;
         }

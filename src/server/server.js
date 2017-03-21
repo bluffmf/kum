@@ -65,3 +65,17 @@ app.use(function(req, res, next) {
 app.listen(process.env.PORT || 5000, function() {
     console.log('Express server listening on port ' + (process.env.PORT || 5000));
 });
+
+
+// http://localhost:5000/header
+
+// var authorize = function(req, res, next) {
+//     if(req.session.user) {
+//         next();
+//     } else {
+//         console.log('Not a user');
+//         // res.status(500).send('Not a user');
+//         res.redirect('/')
+//     }
+// }
+// module.exports = authorize;

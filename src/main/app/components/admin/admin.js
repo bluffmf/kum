@@ -1,4 +1,4 @@
-KumApp.controller('AdminCtrl', function ($scope, $window, $http, $location, adminService) {
+KumApp.controller('AdminCtrl', function ($scope, $window, $http, $location, Notification, adminService) {
     var vm = this;
 
 
@@ -14,7 +14,7 @@ KumApp.controller('AdminCtrl', function ($scope, $window, $http, $location, admi
     vm.go = function(form) {
 
         if (form.$invalid) {
-            console.log("invalid");
+            Notification.error('Форма невалидна');
             return false;
         }
 
@@ -23,7 +23,7 @@ KumApp.controller('AdminCtrl', function ($scope, $window, $http, $location, admi
             window.location.replace($location.absUrl() + res.data);
 
         }).catch(function(err) {
-            alert(err.data);
+            Notification.error('Неверный логин или пароль');
             console.log('Error ', err.status, err.data);
         });
 

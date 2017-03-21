@@ -1,5 +1,16 @@
 
-var KumApp = angular.module('KumApp', ['ngMaterial', 'registerServices'])
+var KumApp = angular.module('KumApp', ['ngMaterial', 'ui-notification', 'registerServices'])
+    .config(function(NotificationProvider) {
+        NotificationProvider.setOptions({
+            delay: 10000,
+            startTop: 20,
+            startRight: 10,
+            verticalSpacing: 20,
+            horizontalSpacing: 20,
+            positionX: 'right',
+            positionY: 'bottom'
+        });
+    });
     // .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     //     $routeProvider.
     //     when('/', {

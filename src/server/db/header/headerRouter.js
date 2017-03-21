@@ -9,6 +9,15 @@ var router = express.Router({
     mergeParams: true
 });
 
+var authorize = function(req, res, next) {
+    if(req.session.user) {
+        next();
+    } else {
+        console.log('Not a user');
+        res.status(500).send('Not a user');
+    }
+};
+
 
 
 router.all('/', function(req, res, next) {
@@ -22,7 +31,7 @@ router.post('/', function(req, res) {
     readable.pipe(res);
 });
 
-router.put('/', function(req, res) {
+router.put('/', authorize, function(req, res) {
     var fp = path.join(basePath, '/src/server/db/header/', '/header.json');
     fs.unlinkSync(fp); // delete the file
     fs.writeFileSync(fp, JSON.stringify(req.body, null, 2), {encoding: 'utf8'});

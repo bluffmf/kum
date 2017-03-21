@@ -11,7 +11,8 @@ var router = express.Router({
 });
 
 
-function authorize(req, res, next) {
+// var authorize = require('../../server');
+var authorize = function(req, res, next) {
     if(req.session.user) {
         next();
     } else {
@@ -19,7 +20,7 @@ function authorize(req, res, next) {
         // res.status(500).send('Not a user');
         res.redirect('/')
     }
-}
+};
 
 router.all('/', function(req, res, next) {
     console.log(req.method, 'for Admin: ');
@@ -40,7 +41,7 @@ router.post('/', function(req, res, next) {
     var flag = (req.body.login === 'w' && req.body.password === 'w') ? true : false;
 
     if (flag) {
-        req.session.user = {id: req.body.login, name: req.body.password}
+        req.session.user = {name: 'admin', home: 'Pyatihatky'}
         console.log('First Good')
         res.send('admin')
     } else {

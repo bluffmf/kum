@@ -13,10 +13,16 @@ md-toolbar.title a {
 .header-form {
     margin: 20px;
 }
+.header-form input {
+    width: 250px;
+}
+
 .md-caption.red {
     color: red;
     text-align: right;
 }
+
+
 /*//////////////////////////////////*/
 .content {
     background-color: orange;

@@ -29,9 +29,9 @@
 
         <div layout="row" layout-align="center center">
             <md-whiteframe flex="50" class="md-whiteframe-11dp">
-                <form name="headerForm" novalidate class="header-form" ng-submit="vm.save(headerForm)">
-                    <h3>Header</h3>
-                    <div flex="80" layout="column" layout-align="center end">
+                <form name="headerForm" novalidate class="header-form" ng-submit="vm.save(headerForm)" layout="row" layout-align="center center">
+                    <h3 flex="20">Header</h3>
+                    <div flex layout="column" layout-align="center end">
                         <label>Тайтл:
                             <input type="text" name="tit" ng-model="vm.head.title" required />
                         </label>
@@ -47,7 +47,7 @@
                         </label>
                         <div ng-show="headerForm.adr.$dirty && headerForm.adr.$error.required" class="md-caption red">Введите адрес</div>
                     </div>
-                    <div layout="row" layout-align="end center" ng-init="vm.reset(headerForm)">
+                    <div flex="40" layout="row" layout-align="end center" ng-init="vm.reset(headerForm)">
                         <md-button class="md-raised" ng-click="vm.reset(headerForm)">Сброс</md-button>
                         <md-button class="md-raised md-primary" type="submit" ng-disabled="headerForm.$invalid">Сохранить</md-button>
                     </div>

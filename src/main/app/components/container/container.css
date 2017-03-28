@@ -1,6 +1,13 @@
 .main {
-    margin-top: 70px;
     min-width: 700px;
+}
+
+.container {
+    margin-top: 70px;
+}
+
+.padded {
+    margin: 50px 0;
 }
 
 
@@ -34,69 +41,6 @@
     background-color: rgb(244, 247, 247);
 }
 
-
-
-
-
-
-
-
-.whiteframe {
-    /* For breakpoint `-xs` */
-    /* For breakpoint `-sm` */
-    /* For breakpoint `-md` */
-    /* For breakpoint `-gt-md` */
-}
-.whiteframe md-whiteframe, .whiteframe div.padded {
-    /*background: #fff;*/
-    margin: 25px 50px;
-    /*height: 100px;*/
-}
-@media (max-width: 599px) {
-    .whiteframe md-whiteframe, .whiteframe div.padded {
-        margin: 25px 50px;
-        /*height: 50px;*/
-        /*background-color: #c8e4fa; */
-    }
-    .whiteframe md-whiteframe > span, .whiteframe div.padded > span {
-        font-size: 0.4em;
-    }
-}
-@media (min-width: 600px) and (max-width: 959px) {
-    .whiteframe md-whiteframe, .whiteframe div.padded {
-        margin: 25px 50px;
-        /*height: 75px;*/
-    }
-    .whiteframe md-whiteframe > span, .whiteframe div.padded > span {
-        font-size: 0.6em;
-    }
-}
-@media (min-width: 960px) and (max-width: 1279px) {
-    .whiteframe md-whiteframe, .whiteframe div.padded {
-        margin: 25px 150px;
-        /*height: 90px;*/
-        /*background-color: #fcddde; */
-    }
-    .whiteframe md-whiteframe > span, .whiteframe div.padded > span {
-        font-size: 0.9em;
-    }
-}
-@media (min-width: 1280px) {
-    .whiteframe md-whiteframe, .whiteframe div.padded {
-        margin: 25px 150px;
-        /*height: 100px;*/
-        /*background-color: #F2FCE2; */
-    }
-    .whiteframe md-whiteframe > span, .whiteframe div.padded > span {
-        font-size: 1.0em;
-    }
-}
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
-*/
 
 
 

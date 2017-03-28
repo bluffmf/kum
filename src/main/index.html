@@ -21,16 +21,13 @@
 
     <div ng-include="'app_main/components/header/header.html'"></div>
 
-    <div class="main" layout="column" layout-align="start stretch">
-        <div flex ng-include="'app_main/components/container/container.html'"></div>
+    <div class="main">
+        <div layout="row" layout-align="center" ng-include="'app_main/components/container/container.html'"></div>
 
-        <div flex ng-include="'app_main/components/footer/footer.html'"></div>
+        <div ng-include="'app_main/components/footer/footer.html'"></div>
     </div>
 
     <div ng-include="'app_main/components/admin/admin.html'"></div>
-
-
-
 
 
     <script src="node_modules/angular/angular.min.js"></script>

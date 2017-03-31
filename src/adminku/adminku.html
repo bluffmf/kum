@@ -25,43 +25,10 @@
         </div>
     </md-toolbar>
 
-    <div flex ng-controller="AdminHeaderCtrl as vm" class="header">
+    <div flex ng-include="'app_admin/components/header/header.html'"></div>
 
-        <div layout="row" layout-align="center center">
-            <md-whiteframe flex="50" class="md-whiteframe-11dp">
-                <form name="headerForm" novalidate class="header-form" ng-submit="vm.save(headerForm)" layout="row" layout-align="center center">
-                    <h3 flex="20">Header</h3>
-                    <div flex layout="column" layout-align="center end">
-                        <label>Тайтл:
-                            <input type="text" name="tit" ng-model="vm.head.title" required />
-                        </label>
-                        <div ng-show="headerForm.tit.$dirty && headerForm.tit.$error.required" class="md-caption red">Введите тайтл</div>
+    <div flex ng-include="'app_admin/components/content/content.html'"></div>
 
-                        <label>Телефон:
-                            <input type="text" name="pho" ng-model="vm.head.phone" required />
-                        </label>
-                        <div ng-show="headerForm.pho.$dirty && headerForm.pho.$error.required" class="md-caption red">Введите телефон</div>
-
-                        <label>Адрес:
-                            <input type="text" name="adr" ng-model="vm.head.address" required />
-                        </label>
-                        <div ng-show="headerForm.adr.$dirty && headerForm.adr.$error.required" class="md-caption red">Введите адрес</div>
-                    </div>
-                    <div flex="40" layout="row" layout-align="end center" ng-init="vm.reset(headerForm)">
-                        <md-button class="md-raised" ng-click="vm.reset(headerForm)">Сброс</md-button>
-                        <md-button class="md-raised md-primary" type="submit" ng-disabled="headerForm.$invalid">Сохранить</md-button>
-                    </div>
-                </form>
-            </md-whiteframe>
-        </div>
-
-
-
-    </div>
-
-    <div class="content">
-        <h2>Content</h2>
-    </div>
 
     <div class="footer">
         <h2>Footer</h2>
@@ -81,6 +48,7 @@
 <script src="app_admin/app.js"></script>
 <script src="app_admin/services/services.js"></script>
 <script src="app_admin/components/header/header.js"></script>
+<script src="app_admin/components/content/content.js"></script>
 
 </body>
 </html>

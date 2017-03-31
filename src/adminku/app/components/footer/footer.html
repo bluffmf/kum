@@ -1,0 +1,44 @@
+<div flex ng-controller="AdminFooterCtrl as vm" class="foot">
+
+    <div layout="row" layout-align="center center">
+        <md-whiteframe flex="70" class="md-whiteframe-11dp">
+            <form name="footForm" novalidate class="foot-form" ng-submit="vm.save(footForm)" layout="row" layout-align="center center">
+                <h3 flex="20">Footer</h3>
+                <div flex layout="column" layout-align="center end">
+                    <label>Политика конф.:
+                        <input type="text" name="pol" ng-model="vm.foot.policy" required />
+                    </label>
+                    <div ng-show="footForm.pol.$dirty && footForm.pol.$error.required" class="md-caption red">Введите политику конфиденциальности</div>
+
+                    <label>Копирайт:
+                        <input type="text" name="cop" ng-model="vm.foot.copyright" required />
+                    </label>
+                    <div ng-show="footForm.cop.$dirty && footForm.cop.$error.required" class="md-caption red">Введите копирайт</div>
+
+                    <div layout-fill><hr/></div>
+
+                    <div ng-repeat="item in vm.foot.items track by item.icon">
+                        <label>Название {{item.icon}}:
+                            <input type="text" name="nam_{{$index}}" ng-model="vm.foot.items[$index]['name']" required />
+                        </label>
+                        <div ng-show="footForm['nam_' + $index].$dirty && footForm['nam_' + $index].$error.required" class="md-caption red">Введите название</div>
+                    </div>
+
+                    <div layout-fill><hr/></div>
+
+                    <div ng-repeat="item in vm.foot.items | filter: {icon: '!phone'} track by item.icon">
+                        <label>Url {{item.icon}}:
+                            <input type="text" name="url_{{$index}}" ng-model="vm.foot.items[$index]['path_url']" required />
+                        </label>
+                        <div ng-show="footForm['url_' + $index].$dirty && footForm['url_' + $index].$error.required" class="md-caption red">Введите url</div>
+                    </div>
+                </div>
+                <div flex="40" layout="row" layout-align="end center" ng-init="vm.reset(footForm)">
+                    <md-button class="md-raised" ng-click="vm.reset(footForm)">Сброс</md-button>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="footForm.$invalid">Сохранить</md-button>
+                </div>
+            </form>
+        </md-whiteframe>
+    </div>
+
+</div>

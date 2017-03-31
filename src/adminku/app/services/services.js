@@ -31,3 +31,34 @@ adminServices.service('adminHeaderService', function($http, $templateCache, $q) 
         }
     }
 });
+
+
+adminServices.service('adminFooterService', function($http, $templateCache, $q) {
+    return {
+        getFooterData: function() {
+            var deferred = $q.defer();
+            $http({
+                method: "POST",
+                url: "/footer",
+                dataType: "json"
+            }).then(
+                res => deferred.resolve(res),
+                err => deferred.reject(err)
+            );
+            return deferred.promise;
+        },
+        saveFooterData: function(foot) {
+            var deferred = $q.defer();
+            $http({
+                method: "PUT",
+                url: "/footer",
+                dataType: "json",
+                data: foot
+            }).then(
+                res => deferred.resolve(res),
+                err => deferred.reject(err)
+            );
+            return deferred.promise;
+        }
+    }
+});

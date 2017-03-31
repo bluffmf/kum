@@ -1,4 +1,4 @@
-AdminKuApp.controller('AdminContentCtrl', function ($scope, $window, $http, $location, Notification, adminHeaderService) {
+AdminKuApp.controller('AdminContainerCtrl', function ($scope, $window, $http, $location, Notification, adminHeaderService) {
     var vm = this;
 
 

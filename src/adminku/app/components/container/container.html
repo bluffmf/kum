@@ -1,0 +1,31 @@
+<div flex ng-controller="AdminContainerCtrl as vm" class="cont">
+
+    <div layout="row" layout-align="center center">
+        <md-whiteframe flex="70" class="md-whiteframe-11dp">
+            <form name="contForm" novalidate class="cont-form" ng-submit="vm.save(contForm)" layout="row" layout-align="center center">
+                <h3 flex="20">Container</h3>
+                <div flex layout="column" layout-align="center end">
+                    <label>Тайтл:
+                        <input type="text" name="tit" ng-model="vm.cont.title" required />
+                    </label>
+                    <div ng-show="contForm.tit.$dirty && contForm.tit.$error.required" class="md-caption red">Введите тайтл</div>
+
+                    <label>Телефон:
+                        <input type="text" name="pho" ng-model="vm.cont.phone" required />
+                    </label>
+                    <div ng-show="contForm.pho.$dirty && contForm.pho.$error.required" class="md-caption red">Введите телефон</div>
+
+                    <label>Адрес:
+                        <input type="text" name="adr" ng-model="vm.cont.address" required />
+                    </label>
+                    <div ng-show="contForm.adr.$dirty && contForm.adr.$error.required" class="md-caption red">Введите адрес</div>
+                </div>
+                <div flex="40" layout="row" layout-align="end center" ng-init="vm.reset(contForm)">
+                    <md-button class="md-raised" ng-click="vm.reset(contForm)">Сброс</md-button>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="contForm.$invalid">Сохранить</md-button>
+                </div>
+            </form>
+        </md-whiteframe>
+    </div>
+
+</div>

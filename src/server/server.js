@@ -50,6 +50,9 @@ app.use('/footer', footerRouter)
 var headerRouter = require('./db/header/headerRouter')
 app.use('/header', headerRouter)
 
+var containerRouter = require('./db/container/containerRouter')
+app.use('/container', containerRouter)
+
 var adminRouter = require('./db/admin/adminRouter')
 app.use('/admin', adminRouter)
 
@@ -67,8 +70,17 @@ app.listen(process.env.PORT || 5000, function() {
 });
 
 
-// http://localhost:5000/header
 
+
+
+
+
+
+
+
+
+
+// http://localhost:5000/header
 // var authorize = function(req, res, next) {
 //     if(req.session.user) {
 //         next();

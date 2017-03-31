@@ -33,6 +33,37 @@ adminServices.service('adminHeaderService', function($http, $templateCache, $q) 
 });
 
 
+adminServices.service('adminContService', function($http, $templateCache, $q) {
+    return {
+        getContData: function() {
+            var deferred = $q.defer();
+            $http({
+                method: "POST",
+                url: "/container",
+                dataType: "json"
+            }).then(
+                res => deferred.resolve(res),
+                err => deferred.reject(err)
+            );
+            return deferred.promise;
+        },
+        saveContData: function(head) {
+            var deferred = $q.defer();
+            $http({
+                method: "PUT",
+                url: "/container",
+                dataType: "json",
+                data: head
+            }).then(
+                res => deferred.resolve(res),
+                err => deferred.reject(err)
+            );
+            return deferred.promise;
+        }
+    }
+});
+
+
 adminServices.service('adminFooterService', function($http, $templateCache, $q) {
     return {
         getFooterData: function() {

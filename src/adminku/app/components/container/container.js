@@ -1,10 +1,10 @@
-AdminKuApp.controller('AdminContainerCtrl', function ($scope, $window, $http, $location, Notification, adminHeaderService) {
+AdminKuApp.controller('AdminContainerCtrl', function ($scope, $window, $http, $location, Notification, adminContService) {
     var vm = this;
 
 
     vm.reset = function(form) {
-        adminHeaderService.getHeaderData().then(function(res) {
-            vm.head = res.data;
+        adminContService.getContData().then(function(res) {
+            vm.cont = res.data;
             form.$setPristine();
             form.$setUntouched();
         });
@@ -15,8 +15,8 @@ AdminKuApp.controller('AdminContainerCtrl', function ($scope, $window, $http, $l
             console.log("invalid");
             return false;
         }
-        adminHeaderService.saveHeaderData(vm.head).then(function(res) {
-            vm.head = res.data;
+        adminContService.saveContData(vm.cont).then(function(res) {
+            vm.cont = res.data;
             Notification.success('Изменения сохранены');
         }).catch(function(err) {
             Notification.error(err.data);

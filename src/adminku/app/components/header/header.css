@@ -11,6 +11,9 @@ md-toolbar.title a {
 .header {
     margin: 50px 0;
 }
+.header md-whiteframe {
+    min-width: 850px;
+}
 .header-form {
     margin: 20px;
 }
@@ -28,17 +31,31 @@ md-toolbar.title a {
 .cont {
     margin: 50px 0;
 }
+.cont md-whiteframe {
+    min-width: 850px;
+}
+.cont div hr {
+    border-top: 1px solid #a4a4a4;
+    margin: 10px;
+}
 .cont-form {
     margin: 20px;
 }
 .cont-form input {
-    width: 250px;
+    width: 340px;
 }
 
 
 /*//////////////////////////////////*/
 .foot {
     margin: 50px 0;
+}
+.foot md-whiteframe {
+    min-width: 850px;
+}
+.foot div hr {
+    border-top: 1px solid #a4a4a4;
+    margin: 10px;
 }
 .foot-form {
     margin: 20px;

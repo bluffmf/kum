@@ -3,7 +3,7 @@
     <div layout="row" layout-align="center center">
         <md-whiteframe flex="70" class="md-whiteframe-11dp">
             <form name="footForm" novalidate class="foot-form" ng-submit="vm.save(footForm)" layout="row" layout-align="center center">
-                <h3 flex="20">Footer</h3>
+                <h3 flex="15">Footer</h3>
                 <div flex layout="column" layout-align="center end">
                     <label>Политика конф.:
                         <input type="text" name="pol" ng-model="vm.foot.policy" required />
@@ -33,7 +33,7 @@
                         <div ng-show="footForm['url_' + $index].$dirty && footForm['url_' + $index].$error.required" class="md-caption red">Введите url</div>
                     </div>
                 </div>
-                <div flex="40" layout="row" layout-align="end center" ng-init="vm.reset(footForm)">
+                <div flex="30" layout="row" layout-align="end center" ng-init="vm.reset(footForm)">
                     <md-button class="md-raised" ng-click="vm.reset(footForm)">Сброс</md-button>
                     <md-button class="md-raised md-primary" type="submit" ng-disabled="footForm.$invalid">Сохранить</md-button>
                 </div>

@@ -1,30 +1,10 @@
 
-KumApp.controller('ContainerCtrl', function ($scope) {
+KumApp.controller('ContainerCtrl', function ($scope, containerService) {
 
     var vm = this;
 
-    vm.firm = {
-        name: "Apple"
-    };
-
-
-
-    var imagePath = 'img/list/60.jpeg';
-    vm.messages = [
-        {
-            face : imagePath,
-            what: 'Brunch this weekend?',
-            who: 'Min Li Chan',
-            when: '3:08PM',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            face : imagePath,
-            what: 'Brunch this weekend?',
-            who: 'Min Li Chan',
-            when: '3:08PM',
-            notes: " I'll be in your neighborhood doing errands"
-        }
-    ];
+    containerService.getContData().then(function(res) {
+        vm.cont = res.data;
+    });
 
 });

@@ -25,16 +25,29 @@
         </div>
     </md-toolbar>
 
-    <div ng-include="'app_admin/components/header/header.html'"></div>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="header">
+        <md-content class="md-padding">
+            <div ng-include="'app_admin/components/header/header.html'"></div>
+        </md-content>
+      </md-tab>
+      <md-tab label="container">
+        <md-content class="md-padding">
+            <div ng-include="'app_admin/components/container/container.html'"></div>
+        </md-content>
+      </md-tab>
+      <md-tab label="footer">
+        <md-content class="md-padding">
+            <div ng-include="'app_admin/components/footer/footer.html'"></div>
+        </md-content>
+      </md-tab>
+    </md-tabs>
 
-    <div ng-include="'app_admin/components/container/container.html'"></div>
+    
 
-    <div ng-include="'app_admin/components/footer/footer.html'"></div>
+    
 
-
-
-
-
+    
 
 
 

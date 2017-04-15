@@ -9,7 +9,7 @@ md-toolbar.title a {
 
 /*//////////////////////////////////*/
 .header {
-    margin: 50px 0;
+    margin: 0;
 }
 .header md-whiteframe {
     min-width: 850px;
@@ -29,7 +29,7 @@ md-toolbar.title a {
 
 /*//////////////////////////////////*/
 .cont {
-    margin: 50px 0;
+    margin: 0;
 }
 .cont md-whiteframe {
     min-width: 850px;
@@ -45,10 +45,14 @@ md-toolbar.title a {
     width: 340px;
 }
 
+.cont-form-bloks {
+    margin-top: 20px;
+}
+
 
 /*//////////////////////////////////*/
 .foot {
-    margin: 50px 0;
+    margin: 0;
 }
 .foot md-whiteframe {
     min-width: 850px;

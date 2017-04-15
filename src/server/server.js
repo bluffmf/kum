@@ -39,8 +39,8 @@ app.get('/', function(req, res) {
     // }
     // req.session.ad++
     // console.log(req.session.ad)
-    // var readable = fs.createReadStream(path.join(basePath, placeAdmin, '/adminku.html'));
-    var readable = fs.createReadStream(path.join(basePath, placeMain, '/index.html'));
+    var readable = fs.createReadStream(path.join(basePath, placeAdmin, '/adminku.html'));
+    // var readable = fs.createReadStream(path.join(basePath, placeMain, '/index.html'));
     readable.pipe(res);
 });
 

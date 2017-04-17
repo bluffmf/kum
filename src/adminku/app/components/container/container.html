@@ -2,35 +2,51 @@
 
     <div layout="row" layout-align="center center">
         <md-whiteframe flex="70" class="md-whiteframe-11dp">
-            <form name="contForm" novalidate class="cont-form" ng-submit="vm.save(contForm)" layout="row" layout-align="center center">
-                
-                <div flex layout="column">
-                    <div class="cont-form-bloks">
-                        <label>Тайтл:
+            <form name="contForm" ng-submit="vm.save(contForm)" novalidate class="cont-form" layout="column">
+
+                <div class="cont-form-bloks">
+                    <div layout="row" layout-align="center center">
+                        <div flex="10">
+                            <label>Тайтл:</label>
+                        </div>
+                        <div flex="90">
                             <input type="text" name="c_tit" ng-model="vm.cont.company.title" required />
-                        </label>
-                        <div ng-show="contForm.c_tit.$dirty && contForm.c_tit.$error.required" class="md-caption red">Введите тайтл</div>
-
-                        <label>Описание:
-                            <textarea name="c_des" rows="5" cols="80" ng-model="vm.cont.company.description" required></textarea>
-                        </label>
-                        <div ng-show="contForm.c_des.$dirty && contForm.c_des.$error.required" class="md-caption red">Введите описание</div>
+                            <div ng-show="contForm.c_tit.$dirty && contForm.c_tit.$error.required" class="md-caption red">Введите тайтл</div>
+                        </div>
                     </div>                        
-                    <div ng-repeat="act in vm.cont.actions track by act.name" class="cont-form-bloks">
-                        <label>Название бонуса:
+                    <div layout="row" layout-align="center center">
+                        <div flex="10">
+                            <label>Описание:</label>
+                        </div>
+                        <div flex="90">
+                            <textarea name="c_des" rows="5" ng-model="vm.cont.company.description" required></textarea>
+                            <div ng-show="contForm.c_des.$dirty && contForm.c_des.$error.required" class="md-caption red">Введите описание</div>                
+                        </div>
+                    </div>
+                </div>
+                <div ng-repeat="act in vm.cont.actions track by act.name" class="cont-form-bloks">
+                    <div layout="row" layout-align="center center">
+                        <div flex="10">
+                            <label>Название бонуса:</label>
+                        </div>
+                        <div flex="90">
                             <input type="text" name="a_tit_{{$index}}" ng-model="vm.cont.actions[$index]['title']" required />
-                        </label>
-                        <div ng-show="contForm['a_tit_' + $index].$dirty && contForm['a_tit_' + $index].$error.required" class="md-caption red">Введите название</div>
-
-                        <label>Описание бонуса:
-                            <textarea name="a_des_{{$index}}" rows="5" cols="80" ng-model="vm.cont.actions[$index]['description']" required></textarea>
-                        </label>
-                        <div ng-show="contForm['a_des_' + $index].$dirty && contForm['a_des_' + $index].$error.required" class="md-caption red">Введите описание</div>
+                            <div ng-show="contForm['a_tit_' + $index].$dirty && contForm['a_tit_' + $index].$error.required" class="md-caption red">Введите название</div>    
+                        </div>
                     </div>
-                    <div layout="row" layout-align="end center" ng-init="vm.reset(contForm)" class="cont-form-bloks">
-                        <md-button class="md-raised" ng-click="vm.reset(contForm)">Сброс</md-button>
-                        <md-button class="md-raised md-primary" type="submit" ng-disabled="contForm.$invalid">Сохранить</md-button>
+                    <div layout="row" layout-align="center center">
+                        <div flex="10">
+                            <label>Описание бонуса:</label>
+                        </div>
+                        <div flex="90">
+                            <textarea name="a_des_{{$index}}" rows="5" ng-model="vm.cont.actions[$index]['description']" required></textarea>
+                            <div ng-show="contForm['a_des_' + $index].$dirty && contForm['a_des_' + $index].$error.required" class="md-caption red">Введите описание</div>
+                        </div>
                     </div>
+                </div>
+                <div ng-init="vm.reset(contForm)" class="cont-form-bloks" layout="row" layout-align="end center">
+                    <md-button class="md-raised" ng-click="vm.reset(contForm)">Сброс</md-button>
+                    <md-button class="md-raised md-primary" type="submit" ng-disabled="contForm.$invalid">Сохранить</md-button>
                 </div>
                 
             </form>

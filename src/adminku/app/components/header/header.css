@@ -18,13 +18,16 @@ md-toolbar.title a {
     margin: 20px;
 }
 .header-form input {
-    width: 250px;
+    width: 100%;
 }
 
 .md-caption.red {
     color: red;
     text-align: right;
 }
+ .head-form-bloks {
+     margin-bottom: 10px;
+ }
 
 
 /*//////////////////////////////////*/
@@ -42,11 +45,17 @@ md-toolbar.title a {
     margin: 20px;
 }
 .cont-form input {
-    width: 340px;
+    width: 100%;
+}
+.cont-form textarea {
+    width: 100%;
 }
 
 .cont-form-bloks {
-    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.cont-form-bloks > div {
+    padding-top: 10px;
 }
 
 
@@ -65,5 +74,8 @@ md-toolbar.title a {
     margin: 20px;
 }
 .foot-form input {
-    width: 250px;
+    width: 100%;
+}
+.foot-form-blocks {
+    margin-bottom: 10px;
 }

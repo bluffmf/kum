@@ -2,28 +2,44 @@
 
     <div layout="row" layout-align="center center">
         <md-whiteframe flex="70" class="md-whiteframe-11dp">
-            <form name="headerForm" novalidate class="header-form" ng-submit="vm.save(headerForm)" layout="row" layout-align="center center">
-                
-                <div flex layout="column" layout-align="center end">
-                    <label>Тайтл:
-                        <input type="text" name="tit" ng-model="vm.head.title" required />
-                    </label>
-                    <div ng-show="headerForm.tit.$dirty && headerForm.tit.$error.required" class="md-caption red">Введите тайтл</div>
-
-                    <label>Телефон:
-                        <input type="text" name="pho" ng-model="vm.head.phone" required />
-                    </label>
-                    <div ng-show="headerForm.pho.$dirty && headerForm.pho.$error.required" class="md-caption red">Введите телефон</div>
-
-                    <label>Адрес:
-                        <input type="text" name="adr" ng-model="vm.head.address" required />
-                    </label>
-                    <div ng-show="headerForm.adr.$dirty && headerForm.adr.$error.required" class="md-caption red">Введите адрес</div>
-                </div>
-                <div flex="30" layout="row" layout-align="end center" ng-init="vm.reset(headerForm)">
+            <form name="headerForm" ng-submit="vm.save(headerForm)" novalidate class="header-form" layout="column">
+                            
+                <div layout="row" layout-align="center center">
+                    <div flex="50" layout="column">
+                        <div class="head-form-bloks" layout="row" layout-align="center center">
+                            <div flex="20">
+                                <label>Тайтл:</label>
+                            </div>
+                            <div flex="80">
+                                <input type="text" name="tit" ng-model="vm.head.title" required />
+                                <div ng-show="headerForm.tit.$dirty && headerForm.tit.$error.required" class="md-caption red">Введите тайтл</div>
+                            </div>
+                        </div>
+                        <div class="head-form-bloks" layout="row" layout-align="center center">
+                            <div flex="20">
+                                <label>Телефон:</label>
+                            </div>
+                            <div flex="80">
+                                <input type="text" name="pho" ng-model="vm.head.phone" required />
+                                <div ng-show="headerForm.pho.$dirty && headerForm.pho.$error.required" class="md-caption red">Введите телефон</div>
+                            </div>
+                        </div>
+                        <div class="head-form-bloks" layout="row" layout-align="center center">
+                            <div flex="20">
+                                <label>Адрес:</label>
+                            </div>
+                            <div flex="80">
+                                <input type="text" name="adr" ng-model="vm.head.address" required />
+                                <div ng-show="headerForm.adr.$dirty && headerForm.adr.$error.required" class="md-caption red">Введите адрес</div>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>            
+                <div ng-init="vm.reset(headerForm)" class="head-form-bloks" layout="row" layout-align="end center">
                     <md-button class="md-raised" ng-click="vm.reset(headerForm)">Сброс</md-button>
                     <md-button class="md-raised md-primary" type="submit" ng-disabled="headerForm.$invalid">Сохранить</md-button>
-                </div>
+                </div>    
+                                                
             </form>
         </md-whiteframe>
     </div>

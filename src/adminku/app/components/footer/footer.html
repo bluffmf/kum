@@ -2,41 +2,58 @@
 
     <div layout="row" layout-align="center center">
         <md-whiteframe flex="70" class="md-whiteframe-11dp">
-            <form name="footForm" novalidate class="foot-form" ng-submit="vm.save(footForm)" layout="row" layout-align="center center">
-                <h3 flex="15">Footer</h3>
-                <div flex layout="column" layout-align="center end">
-                    <label>Политика конф.:
-                        <input type="text" name="pol" ng-model="vm.foot.policy" required />
-                    </label>
-                    <div ng-show="footForm.pol.$dirty && footForm.pol.$error.required" class="md-caption red">Введите политику конфиденциальности</div>
+            <form name="footForm" ng-submit="vm.save(footForm)" novalidate class="foot-form" layout="column">
+                
+                <div layout="row" layout-align="center center">
+                    <div flex="50" layout="column">
+                        <div class="foot-form-blocks" layout="row" layout-align="center center">
+                            <div flex="30">
+                                <label>Политика конф.:</label>
+                            </div>
+                            <div flex="70">
+                                <input type="text" name="pol" ng-model="vm.foot.policy" required />
+                                <div ng-show="footForm.pol.$dirty && footForm.pol.$error.required" class="md-caption red">Введите политику конфиденциальности</div>
+                            </div>
+                        </div>
+                        <div class="foot-form-blocks" layout="row" layout-align="center center">
+                            <div flex="30">
+                                <label>Копирайт:</label>
+                            </div>
+                            <div flex="70">
+                                <input type="text" name="cop" ng-model="vm.foot.copyright" required />
+                                <div ng-show="footForm.cop.$dirty && footForm.cop.$error.required" class="md-caption red">Введите копирайт</div>        
+                            </div>
+                        </div>
+                        <div ng-repeat="item in vm.foot.items track by item.icon" class="foot-form-blocks">
+                            <div layout="row" layout-align="center center">
+                                <div flex="30">
+                                    <label>Название {{item.icon}}:</label>
+                                </div>
+                                <div flex="70">
+                                    <input type="text" name="nam_{{$index}}" ng-model="vm.foot.items[$index]['name']" required />
+                                    <div ng-show="footForm['nam_' + $index].$dirty && footForm['nam_' + $index].$error.required" class="md-caption red">Введите название</div>        
+                                </div>
+                            </div>
+                        </div>
 
-                    <label>Копирайт:
-                        <input type="text" name="cop" ng-model="vm.foot.copyright" required />
-                    </label>
-                    <div ng-show="footForm.cop.$dirty && footForm.cop.$error.required" class="md-caption red">Введите копирайт</div>
-
-                    <div layout-fill><hr/></div>
-
-                    <div ng-repeat="item in vm.foot.items track by item.icon">
-                        <label>Название {{item.icon}}:
-                            <input type="text" name="nam_{{$index}}" ng-model="vm.foot.items[$index]['name']" required />
-                        </label>
-                        <div ng-show="footForm['nam_' + $index].$dirty && footForm['nam_' + $index].$error.required" class="md-caption red">Введите название</div>
-                    </div>
-
-                    <div layout-fill><hr/></div>
-
-                    <div ng-repeat="item in vm.foot.items | filter: {icon: '!phone'} track by item.icon">
-                        <label>Url {{item.icon}}:
-                            <input type="text" name="url_{{$index}}" ng-model="vm.foot.items[$index]['path_url']" required />
-                        </label>
-                        <div ng-show="footForm['url_' + $index].$dirty && footForm['url_' + $index].$error.required" class="md-caption red">Введите url</div>
-                    </div>
+                        <div ng-repeat="item in vm.foot.items | filter: {icon: '!phone'} track by item.icon" class="foot-form-blocks">
+                            <div layout="row" layout-align="center center">
+                                <div flex="30">
+                                    <label>Url {{item.icon}}:</label>
+                                </div>
+                                <div flex="70">
+                                    <input type="text" name="url_{{$index}}" ng-model="vm.foot.items[vm.foot.items.indexOf(item)]['path_url']" required />
+                                    <div ng-show="footForm['url_' + $index].$dirty && footForm['url_' + $index].$error.required" class="md-caption red">Введите url</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
                 </div>
-                <div flex="30" layout="row" layout-align="end center" ng-init="vm.reset(footForm)">
+                <div ng-init="vm.reset(footForm)" layout="row" layout-align="end center">
                     <md-button class="md-raised" ng-click="vm.reset(footForm)">Сброс</md-button>
                     <md-button class="md-raised md-primary" type="submit" ng-disabled="footForm.$invalid">Сохранить</md-button>
                 </div>
+
             </form>
         </md-whiteframe>
     </div>
